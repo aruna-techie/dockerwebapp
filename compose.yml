@@ -1,12 +1,8 @@
-version: "3.9"
-
 services:
   devopsdb:
     image: dbimg1
     ports:
       - "3306:3306"
-    deploy:
-      replicas: 1
     networks:
       - mynetwork
 
@@ -14,8 +10,6 @@ services:
     image: appimg1
     ports:
       - "1111:8080"
-    deploy:
-      replicas: 3
     depends_on:
       - devopsdb
     networks:
