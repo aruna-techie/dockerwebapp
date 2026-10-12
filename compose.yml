@@ -1,13 +1,13 @@
 services:
   devopsdb:
-    image: dbimg1
+    image: aruna1105/devops:db-img
     ports:
       - "3306:3306"
     networks:
       - mynetwork
 
   application:
-    image: appimg1
+    image: aruna1105/devops:app-img
     ports:
       - "1111:8080"
     depends_on:
@@ -17,4 +17,4 @@ services:
 
 networks:
   mynetwork:
-    driver: bridge
+    driver: overlay
